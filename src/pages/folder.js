@@ -1,8 +1,8 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom";
+import { fetchDelete } from "../util/api";
 
-const Folderbox = styled.a`
-    text-decoration: none;
-    color: #000;
+const Folderbox = styled.div`
     height: 3rem;
     padding: 0 2rem;
     border-bottom: 1px solid #EAEAEA;
@@ -31,14 +31,20 @@ const Delete =styled.button`
  background: rgba(0,0,0,0);
  color: #d3d3d3;
 `
-const Folder = ({data}) => {
+const Folder = ({folder,index}) => {
+    const handleDeleteClick = () => {
+        fetchDelete('http://localhost:3001/todos/', index);
+    }
     return (
-    <Li>
-     <Folderbox href="#">
-        <Foldername>{data.name}</Foldername>
-        <Folderupdate>{data.update}</Folderupdate>
-        <Delete>X</Delete>
-     </Folderbox >
+    <Li key={folder.id}>
+     <Link to={`/todos/${folder.id}`} className='link'>
+     <Folderbox>
+        <Foldername>{folder.name}</Foldername>
+        <Folderupdate>{folder.update}</Folderupdate>
+        <Delete onClick={handleDeleteClick}>X</Delete>
+    </Folderbox >
+    </Link>
+     
      </Li>
     );
   }

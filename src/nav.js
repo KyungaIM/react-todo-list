@@ -1,36 +1,34 @@
 import styled from "styled-components"
+import{ useParams } from "react-router-dom";
 
 const Navi = styled.nav`
     height: 3rem;
-    background-color: #ccc;
     display : flex;
     flex-direction : row ;
-    align-items : center;
-    
+    align-items : center;  
 `
-const FolderNav = styled.a`
+const FolderNav = styled.div`
     flex : 1 1 0 ;
     text-align: center;
-    background-color: #fff;
+    background-color: ${(props)=>props.id ? '#F6F6F6' :'#fff' };
     height:3rem;
     line-height: 3rem;
-    text-decoration: none;
 `
-const TodoNav = styled.a`
+const TodoNav = styled.div`
     flex : 1 1 0 ;
     text-align: center;
-    background-color: #F6F6F6;
+    background-color: ${(props)=> props.id ? '#fff' :'#F6F6F6' };
     height:3rem;
     line-height: 3rem;
-    text-decoration: none;
 `
 
 
-const Nav = () => {
+const Nav = ({todo}) => {
+    const { id } = useParams();
     return (
         <Navi>
-            <FolderNav href="#">폴더</FolderNav>
-            <TodoNav href="#">todo</TodoNav>
+            <FolderNav id={id} >폴더</FolderNav>
+            <TodoNav id={id} todo={todo}>todo</TodoNav>
         </Navi>
     )
   }

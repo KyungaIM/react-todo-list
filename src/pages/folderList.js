@@ -1,18 +1,18 @@
 import styled from "styled-components"
-import Folder from './folder';
-import { dummyData } from '../static/dummyData';
+import Folder from './Folder';
+
 const Ul = styled.ul`
     margin: 0;
     padding: 0;
 `
 
-const FolderList = () => {
+const FolderList = ({todos}) => {
     return (
         <Ul>
         {
-            dummyData.map((data)=> {
+            todos.map((folder,index)=> {
                 return(
-                <Folder data = {data}/>
+                <Folder folder = {folder} index={index}/>
                 )
             })
         }
