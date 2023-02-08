@@ -33,7 +33,7 @@ const Delete =styled.button`
 `
 const Folder = ({folder,index}) => {
     const handleDeleteClick = () => {
-        fetchDelete('http://localhost:3001/todos/', index);
+        fetchDelete('http://localhost:3001/todos/', folder.id);
     }
     return (
     <Li key={folder.id}>

@@ -1,14 +1,14 @@
 const BASE_URL = 'http://localhost:3000/';
 const BLOG_URL = 'http://localhost:3000/todos/';
 
-export const fetchCreate = (url, data) => {
+export const fetchCreate = (url, data,link) => {
     fetch(url, {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify(data)
     })
     .then(() => {
-        window.location.href = BASE_URL;
+        window.location.href = link;
     })
     .catch((error) => {
         console.error('Error', error);

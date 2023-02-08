@@ -1,8 +1,11 @@
+
 body{
     margin: 0;
+    background-color:'#ccc';
 }
 .link{
     text-decoration: none;
+    color: #000;
 }
 header{
     padding: 2.2rem 32px;

@@ -22,6 +22,7 @@ const Todoname = styled.div`
 `
 const Li = styled.li`
     list-style: none;
+    background-color: #fff;
 `
 const Delete =styled.button`
  border: 0;
@@ -50,6 +51,7 @@ const Folder = ({todo,index,id,list}) => {
         list.splice(index,1)
         let patchData = {"list" : [...list]};
         fetchPatch('http://localhost:3001/todos/', id, patchData);
+        window.location.href = `http://localhost:3000/todos/${id}`
     }
 
     return (

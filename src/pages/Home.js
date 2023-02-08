@@ -3,28 +3,23 @@ import FolderList from "./FolderList";
 import styled from "styled-components";
 import Nav from '../nav';
 import { Link } from 'react-router-dom';
+import { AiOutlinePlus } from "react-icons/ai";
 
-const PlusButton = styled.button`
-  width: 4rem;
-  height: 4rem;
+const PlusButton = styled.a`
+   display: inline-block;
+  padding: 0.9rem 1rem;
   border-radius: 50%;
-  border: none;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
 
   position: absolute;
   bottom: 30px;
   right: 30px;
   background-color: #44A0E2;
-  
+  box-shadow: 5px 5px 4px 1px rgba(0, 0, 0, .1);
   :hover{
     background-color: #3a92c9;
-  }
-  div{
-    width: 30px;
-    transform: translate(10px, 0px);
-    border: 1px solid #fff;
-  }
-  div:nth-of-type(2){
-    transform: rotate(90deg) translate(0, -10px);
   }
 `
 
@@ -37,12 +32,11 @@ const Home = ({ todos, isPending }) => {
             {todos && 
             <FolderList todos={todos} />}
         <Link to="/update">
+        <div>
         <PlusButton>
-        <a>
-        <div></div>
-        <div></div>
-        </a>
+        <AiOutlinePlus size={30}/>
         </PlusButton>
+        </div>
         </Link>
         </div>
     );

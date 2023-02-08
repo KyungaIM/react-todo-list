@@ -4,18 +4,19 @@ import useFetch from "../util/useFetch";
 import Todo from "./Todo";
 import Nav from "../nav";
 import Header from "./Header";
-
+import TodoAdd from "./TodoAdd";
 
 const TodoList = () => {
     const { id } = useParams();
     const [todos, isPending, error] = useFetch(`http://localhost:3001/todos/${id}`)
 
     return (
+        <>
+        { isPending && <Loading/> }
+        { error && <div>{ error }</div> }
+        { todos && <Nav/>}
+        { todos && <Header todos={todos}/>}
         <ul>
-            { isPending && <Loading/> }
-            { error && <div>{ error }</div> }
-            { todos && <Nav todos={todos}/>}
-            { todos && <Header todos={todos}/>}
             { todos && 
                     todos.list.map((todo,index,arr)=> {
                     return(
@@ -23,6 +24,8 @@ const TodoList = () => {
                     )})
                     }
         </ul>
+        { todos && <TodoAdd list={todos.list} id={id}/>}
+        </>
     )
 }
 
