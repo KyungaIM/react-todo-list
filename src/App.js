@@ -1,5 +1,5 @@
 import Home from './pages/Home';
-import Loading from './pages/Loding';
+import Loading from './component/Loding';
 import useFetch from './util/useFetch';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { Suspense } from 'react';

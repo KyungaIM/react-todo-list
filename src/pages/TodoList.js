@@ -1,8 +1,8 @@
 import{ useParams } from "react-router-dom";
-import Loading from "./Loding";
+import Loading from "../component/Loding";
 import useFetch from "../util/useFetch";
 import Todo from "./Todo";
-import Nav from "../nav";
+import Nav from "../component/nav";
 import Header from "./Header";
 import TodoAdd from "./TodoAdd";
 

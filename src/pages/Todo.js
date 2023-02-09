@@ -31,7 +31,7 @@ const Delete =styled.button`
 `
 const CheckBox = styled.input`
     flex : 0 1 2% ;
-    accent-color: ${(props) => props.checked&&'#6b6b6b'};
+    accent-color: ${(props) => props.checked&&'#0093FE'};
     border: 1px solid #ccc;
 `
 const Folder = ({todo,index,id,list}) => {

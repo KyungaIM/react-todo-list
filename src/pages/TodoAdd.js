@@ -44,7 +44,11 @@ const TodoAdd = ({list,id}) => {
             "todo": todoName,
             "check": false
           })
-        let patchData = {"list" : [...list]};
+        const date = new Date();
+        const today = date.toLocaleDateString().slice(0,10).replace(/ /gi,'0');
+        let patchData = {
+          "update": today,
+          "list" : [...list]};
         fetchPatch('http://localhost:3001/todos/', id, patchData);
         window.location.href = `http://localhost:3000/todos/${id}`
     }

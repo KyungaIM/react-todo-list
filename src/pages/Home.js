@@ -1,7 +1,7 @@
-import Loading from "./Loding";
+import Loading from "../component/Loding";
 import FolderList from "./FolderList";
 import styled from "styled-components";
-import Nav from '../nav';
+import Nav from '../component/nav';
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from "react-icons/ai";
 
@@ -27,17 +27,17 @@ const Home = ({ todos, isPending }) => {
   
     return (
         <div >
-            {isPending && <Loading />}
-            {todos && <Nav/>}
-            {todos && 
-            <FolderList todos={todos} />}
+        { isPending && <Loading />}
+        { todos && <Nav/>}
+        { todos && 
+        <FolderList todos={todos} />}
         <Link to="/update">
         <div>
         <PlusButton>
         <AiOutlinePlus size={30}/>
         </PlusButton>
         </div>
-        </Link>
+        </Link> 
         </div>
     );
 }

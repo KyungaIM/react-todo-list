@@ -1,4 +1,4 @@
-import Nav from '../nav';
+import Nav from '../component/nav';
 import styled  from 'styled-components';
 import {fetchCreate} from '../util/api';
 import { useState } from "react";
@@ -50,12 +50,22 @@ const FolderAdd = ({todos}) =>{
          "list": []
        }
       fetchCreate('http://localhost:3001/todos/',data,`http://localhost:3000/todos/${newId}`)
-   }
+      }
+      const handleKeyPress = (event) => {
+         if (event.key === 'Enter') {
+            handleSubmitClick()
+         }
+      };
  return(
     <>
     <Nav/>
     <Input>
-    <input placeholder='폴더명을 작성해주세요' autoFocus={true} value={folderName} onChange={(e)=>setfolderName(e.target.value)}/>
+    <input 
+    placeholder='폴더명을 작성해주세요' 
+    autoFocus={true} 
+    value={folderName} 
+    onChange={(e)=>setfolderName(e.target.value)}
+    onKeyPress={handleKeyPress}/>
     {noString && 
     <p>내용을 입력해주세요</p>
    }
