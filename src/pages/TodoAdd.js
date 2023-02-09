@@ -1,6 +1,4 @@
 import styled  from 'styled-components';
-import {fetchPatch} from '../util/api';
-import { useState } from "react";
 
 const Input = styled.div`
  position: fixed;
@@ -35,26 +33,11 @@ const Input = styled.div`
   }
   }
 `
-const TodoAdd = ({list,id}) => {
-    const [todoName, setTodoName] = useState('');
-    const handleSubmitClick = () => {
-        if(todoName === '') return ;
-        list.push({
-            "index": list.length + 1,
-            "todo": todoName,
-            "check": false
-          })
-        const date = new Date();
-        const today = date.toLocaleDateString().slice(0,10).replace(/ /gi,'0');
-        let patchData = {
-          "update": today,
-          "list" : [...list]};
-        fetchPatch('http://localhost:3001/todos/', id, patchData);
-        window.location.href = `http://localhost:3000/todos/${id}`
-    }
+const TodoAdd = ({click,todoName,setTodoName}) => {
+
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            handleSubmitClick()
+          click()
         }
       };
     return(
@@ -65,7 +48,7 @@ const TodoAdd = ({list,id}) => {
                 value={todoName} 
                 onChange={(e)=>setTodoName(e.target.value)}
                 onKeyPress={handleKeyPress}/>
-        <button onClick={handleSubmitClick}>추가하기</button>
+        <button onClick={click}>추가하기</button>
         </Input>
         </>
     )

@@ -42,8 +42,14 @@
     {
       "id": 3,
       "name": "study list",
-      "update": "2023.01.05",
-      "list": []
+      "update": "2023.02.01",
+      "list": [
+        {
+          "index": 1,
+          "todo": "딥다이브",
+          "check": false
+        }
+      ]
     },
     {
       "id": 4,

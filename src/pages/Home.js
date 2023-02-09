@@ -27,8 +27,8 @@ const Home = ({ todos, isPending }) => {
   
     return (
         <div >
+        <Nav/>
         { isPending && <Loading />}
-        { todos && <Nav/>}
         { todos && 
         <FolderList todos={todos} />}
         <Link to="/update">
