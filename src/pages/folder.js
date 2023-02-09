@@ -36,7 +36,7 @@ const Folder = ({folder,index}) => {
         fetchDelete('http://localhost:3001/todos/', folder.id);
     }
     return (
-    <Li key={folder.id}>
+    <Li>
      <Link to={`/todos/${folder.id}`} className='link'>
      <Folderbox>
         <Foldername>{folder.name}</Foldername>

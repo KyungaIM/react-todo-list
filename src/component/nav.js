@@ -28,7 +28,7 @@ const Nav = () => {
     const { id } = useParams();
     return (
         <Navi>
-            <FolderNav id={id} href='http://localhost:3000/'>
+            <FolderNav id={id} href='http://localhost:3000'>
                     <AiFillFolderOpen color="#44A0E2" size={24}/>
             </FolderNav>
             <TodoNav id={id}><AiOutlineDownSquare color="#44A0E2" size={24}/></TodoNav>

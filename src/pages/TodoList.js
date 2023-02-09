@@ -20,7 +20,7 @@ const TodoList = () => {
             { todos && 
                     todos.list.map((todo,index,arr)=> {
                     return(
-                    <Todo todo = {todo} index={index} id={id} list={arr}/>
+                    <Todo key={todo.index} todo = {todo} index={index} id={id} list={arr}/>
                     )})
                     }
         </ul>

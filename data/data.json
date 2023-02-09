@@ -8,27 +8,17 @@
         {
           "index": 2,
           "todo": "텀블러",
-          "check": false
-        },
-        {
-          "index": 4,
-          "todo": "우산",
-          "check": false
+          "check": true
         },
         {
           "index": 3,
           "todo": "충전기",
-          "check": false
-        },
-        {
-          "index": 4,
-          "todo": "사과",
-          "check": false
+          "check": true
         },
         {
           "index": 5,
           "todo": "배",
-          "check": false
+          "check": true
         },
         {
           "index": 6,
@@ -57,8 +47,8 @@
     },
     {
       "id": 4,
-      "name": "workout list",
-      "update": "2023.01.08",
+      "name": "새폴더",
+      "update": "2023.02.09",
       "list": []
     }
   ]

@@ -12,7 +12,7 @@ const FolderList = ({todos}) => {
         {
             todos.map((folder,index)=> {
                 return(
-                <Folder folder = {folder} index={index}/>
+                <Folder key={folder.id} folder = {folder} index={index}/>
                 )
             })
         }

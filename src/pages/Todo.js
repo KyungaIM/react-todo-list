@@ -55,7 +55,7 @@ const Folder = ({todo,index,id,list}) => {
     }
 
     return (
-    <Li key={todo.index}>
+    <Li>
      <Todobox checked={isCheck}>
         <CheckBox type='checkbox' checked={isCheck} onChange={handleCheckClick}></CheckBox>
         <Todoname checked={isCheck} >{todo.todo}</Todoname>

@@ -5,7 +5,7 @@ import Nav from '../component/nav';
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from "react-icons/ai";
 
-const PlusButton = styled.a`
+const PlusButton = styled.div`
    display: inline-block;
   padding: 0.9rem 1rem;
   border-radius: 50%;
@@ -32,11 +32,9 @@ const Home = ({ todos, isPending }) => {
         { todos && 
         <FolderList todos={todos} />}
         <Link to="/update">
-        <div>
         <PlusButton>
         <AiOutlinePlus size={30}/>
         </PlusButton>
-        </div>
         </Link> 
         </div>
     );
