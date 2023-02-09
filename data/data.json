@@ -30,11 +30,16 @@
     {
       "id": 2,
       "name": "to-do list",
-      "update": "2023.01.04",
+      "update": "2023.02.01",
       "list": [
         {
           "index": 1,
           "todo": "장보기",
+          "check": false
+        },
+        {
+          "index": 2,
+          "todo": "공부하기",
           "check": false
         }
       ]
@@ -50,12 +55,6 @@
           "check": false
         }
       ]
-    },
-    {
-      "id": 4,
-      "name": "새폴더",
-      "update": "2023.02.09",
-      "list": []
     }
   ]
 }

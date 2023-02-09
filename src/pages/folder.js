@@ -29,12 +29,22 @@ const Folderupdate =styled.div`
 const Delete =styled.button`
  border: 0;
  background: rgba(0,0,0,0);
+ padding: 0;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
  color: #d3d3d3;
+ :hover{
+    color: #44A0E2;
+    background: #fff;
+ }
 `
 const Folder = ({folder,index}) => {
-    const handleDeleteClick = () => {
+    const handleDeleteClick = (event) => {
+        event.stopPropagation();
         fetchDelete('http://localhost:3001/todos/', folder.id);
     }
+    
     return (
     <Li>
      <Link to={`/todos/${folder.id}`} className='link'>
